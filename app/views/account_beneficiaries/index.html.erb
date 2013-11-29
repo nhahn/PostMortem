@@ -1,0 +1,27 @@
+<h1>Listing account_beneficiaries</h1>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Beneficiary</th>
+    <th>Permission</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @account_beneficiaries.each do |account_beneficiary| %>
+  <tr>
+    <td><%= account_beneficiary.account_id %></td>
+    <td><%= account_beneficiary.beneficiary_id %></td>
+    <td><%= account_beneficiary.permission %></td>
+    <td><%= link_to 'Show', account_beneficiary %></td>
+    <td><%= link_to 'Edit', edit_account_beneficiary_path(account_beneficiary) %></td>
+    <td><%= link_to 'Destroy', account_beneficiary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Account beneficiary', new_account_beneficiary_path %>

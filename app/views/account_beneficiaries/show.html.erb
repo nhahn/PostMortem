@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Account:</b>
+  <%= @account_beneficiary.account_id %>
+</p>
+
+<p>
+  <b>Beneficiary:</b>
+  <%= @account_beneficiary.beneficiary_id %>
+</p>
+
+<p>
+  <b>Permission:</b>
+  <%= @account_beneficiary.permission %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_beneficiary_path(@account_beneficiary) %> |
+<%= link_to 'Back', account_beneficiaries_path %>
