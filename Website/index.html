@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Untitled Document</title>
 <link rel="stylesheet" href="foundation/css/foundation.css">
-
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 <!-- Keeping styles in main doc for now because of laziness -->
 <style>
 #top-nav-container {
@@ -14,14 +14,15 @@
 	box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
 }
 .top-bar {
-	height: 60px;
 	background-color: #222;
-	padding-top: 10px;
 }
 .top-bar .name h1 a {
 	color: #FFF;
 	font-weight: lighter;
-	font-family: "Helvetica Neue";
+	font-family: 'Open Sans', sans-serif;
+}
+.top-bar-section ul li.active > a {
+	background: #000;
 }
 .item {
 	width:24.2%;
@@ -37,8 +38,8 @@
 	width:100%;
 	background-color:#F2F2F2;
 	height:35px;
-	font-weight: light;
-	font-family: "Helvetica Neue";
+	font-weight: normal;
+	font-family: 'Open Sans', sans-serif;
 }
 .item-title a {
 	color:#FFF;
@@ -89,24 +90,33 @@
   </ul>
   -->
   
-  <!--
   <section class="top-bar-section">
     <ul class="right">
-      <li class="has-dropdown">
-        <a href="#">Right Button with Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-        </ul>
+      <li class="active">
+      	<a href="#">Information</a>
+      </li>
+      <li>
+      	<a href="will.html">Digital Will Creator</a>
       </li>
     </ul>
   </section>
-  -->
 </nav>
 </div>
-
-<div class="row" style="padding-top:80px; background-color:#F8F8F8">
-	<div class="small-12 medium-12 large-12 columns">
-    	<div id="block-container">
+<div id="body-wrapper" style="padding-top:50px; background-color:#F8F8F8">
+	<div class="row">
+    	<div class="large-12" style="padding:10px;">
+        	<div style="margin-left: 5px; margin-right: 7px; padding: 10px; border:solid 1px #999; border-radius:3px; background-color: #FFF">
+                <h2>Information</h2>
+                <p>
+                Find information on how various sites treat your accounts and data after you have passed away
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+            <div id="block-container">
+            </div>
         </div>
     </div>
 </div>
