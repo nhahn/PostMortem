@@ -1,14 +1,14 @@
 PostMortem::Application.routes.draw do
-  resources :account_beneficiaries
+  resources :beneficiaries
+
+
+  resources :users
 
 
   resources :accounts
 
 
-  resources :beneficiaries
-
-
-  resources :users
+  resources :account_beneficiaries
 
 
   # The priority is based upon order of creation:
