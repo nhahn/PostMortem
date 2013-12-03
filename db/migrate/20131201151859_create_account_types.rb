@@ -4,6 +4,7 @@ class CreateAccountTypes < ActiveRecord::Migration
       t.string :name
       t.string :username_regex
       t.text :permissions
+      t.text :content
 
       t.timestamps
     end

@@ -13,3 +13,70 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+
+#top-nav-container {
+	background-color: #222;
+	-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
+}
+.top-bar {
+	background-color: #222;
+}
+.top-bar .name h1 a {
+	color: #FFF;
+	font-weight: lighter;
+	font-family: 'Open Sans', sans-serif;
+}
+.top-bar-section ul li.active > a {
+	background: #000;
+}
+#callout h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#callout p {
+	-webkit-margin-after: 0px;
+	-webkit-margin-before: 0px;
+}
+.item {
+	width:24.2%;
+	overflow:auto;
+	display:block;
+	margin-bottom:10px;
+	border-radius:3px;
+	border:solid 1px #999999;
+}
+
+.item-title {
+	padding:10px;
+	width:100%;
+	background-color:#F2F2F2;
+	height:35px;
+	font-weight: normal;
+	font-family: 'Open Sans', sans-serif;
+}
+.item-title a {
+	color:#FFF;
+	text-decoration:none;
+}
+.item-body {
+	padding:10px;
+	width:100%;
+	overflow:auto;
+	background-color:#FFF;
+}
+.title-area h1 a {
+	font-size:30px;
+}
+@media only screen and (max-width: 40em) {
+	.item {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	.item {
+		width:32.3%;
+	}
+}
+

@@ -10,6 +10,15 @@ class AccountTypesController < ApplicationController
     end
   end
 
+  def info
+    @account_types = AccountType.all
+    @account_colors = ["#cf393f","#5ecf61","#cfcc47"] 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @account_types }
+    end
+  end
+
   # GET /account_types/1
   # GET /account_types/1.json
   def show

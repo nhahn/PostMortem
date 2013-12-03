@@ -1,6 +1,8 @@
 PostMortem::Application.routes.draw do
   resources :accounts
-  resources :account_types
+  resources :account_types do
+    get 'info', on: :collection
+  end
   resources :beneficiaries
   resources :users
   resources :account_beneficiaries
@@ -9,6 +11,8 @@ PostMortem::Application.routes.draw do
 
   get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
+
+  root :to => 'account_types#info'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="large-12" style="padding:10px;">
+    <div id="callout" style="margin-left: 5px; margin-right: 7px; padding: 10px; border:solid 1px #999; border-radius:3px; background-color: #FFF">
+      <h2>Information</h2>
+      <p>
+      Find information on how various sites treat your accounts and data after you have passed away
+      </p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns">
+    <div id="block-container">
+    <% @account_types.each do |account| %>
+      <div class="item">
+        <div class="item-title" style="background-color:<%=@account_colors.sample%>">
+          <%= link_to account.name, account %>
+        </div>
+        <div class="item-body">
+          <%= account.content %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  var $container = $('#block-container');
+  // initialize
+  console.log("hi");
+  $container.masonry({
+    itemSelector: '.item',
+    columnWidth: ".item",
+    gutter: 10
+  });
+
+</script>
