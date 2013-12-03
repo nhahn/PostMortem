@@ -1,14 +1,34 @@
-<%= simple_form_for(@account) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :username %>
-    <%= f.input :password %>
-    <%= f.input :type %>
-    <%= f.input :user_id %>
+<div class="row">
+  <div class="large-3 columns">
+    <div class="form-inputs">
+      <label class="string">Pick an Account</label>
+      <% @account_types.each do |account_type| %>
+        <div class="row panel">
+          <%= account_type.name %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="large-6 columns" id="account-form">
+    <%= simple_form_for(@account) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inpus">
+          <%= f.input :username %>
+          <%= f.input :password %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <div class="large-3 columns">
+    <div class="form-inputs">
+      <label class="string">Added Accounts</label>
+      <% @accounts.each do |account| %>
+        <div class="row panel">
+          <%= account.email %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,14 @@
 PostMortem::Application.routes.draw do
-  resources :beneficiaries
-
-
-  resources :users
-
-
   resources :accounts
-
-
+  resources :account_types
+  resources :beneficiaries
+  resources :users
   resources :account_beneficiaries
+  resources :sessions
 
+
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

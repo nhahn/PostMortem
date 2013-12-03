@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Account type</th>
     <th>Username</th>
     <th>Password</th>
     <th>Type</th>
@@ -13,6 +14,7 @@
 
 <% @accounts.each do |account| %>
   <tr>
+    <td><%= account.account_type_id %></td>
     <td><%= account.username %></td>
     <td><%= account.password %></td>
     <td><%= account.type %></td>

@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :email
-      t.datetime :dob
+      t.date :dob
       t.string :street
       t.integer :zip
       t.string :state

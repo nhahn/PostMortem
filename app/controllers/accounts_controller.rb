@@ -25,6 +25,8 @@ class AccountsController < ApplicationController
   # GET /accounts/new.json
   def new
     @account = Account.new
+    @accounts = current_user.accounts
+    @account_types = AccountType.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +37,15 @@ class AccountsController < ApplicationController
   # GET /accounts/1/edit
   def edit
     @account = Account.find(params[:id])
+    @accounts = current_user.accounts
+    @account_types = AccountType.all
   end
 
   # POST /accounts
   # POST /accounts.json
   def create
     @account = Account.new(params[:account])
+    @account.id = current_user.id
 
     respond_to do |format|
       if @account.save

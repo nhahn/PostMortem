@@ -1,17 +1,23 @@
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for @user, validate: :true do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email %>
-    <%= f.input :dob %>
-    <%= f.input :street %>
-    <%= f.input :zip %>
-    <%= f.input :state %>
-    <%= f.input :phone %>
-    <%= f.input :password_digest %>
-    <%= f.input :last_name %>
-    <%= f.input :first_name %>
-    <%= f.input :deceased %>
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :street%>
+        <%= f.input :state, collection: User::STATES_LIST %>
+        <%= f.input :zip, as: :string %>
+        <%= f.input :dob, as: :string, input_html: { class: 'datepicker' }, label: 'Date of Birth' %>
+        <%= f.input :phone, as: :tel%>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :email, as: :email%>
+        <%= f.input :password, as: :password%>
+        <%= f.input :password_confirmation, as: :password%>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
