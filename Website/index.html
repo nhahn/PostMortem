@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="foundation/css/foundation.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+<!-- Keeping styles in main doc for now because of laziness -->
+<style>
+#top-nav-container {
+	background-color: #222;
+	-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.4);
+}
+.top-bar {
+	background-color: #222;
+}
+.top-bar .name h1 a {
+	color: #FFF;
+	font-weight: lighter;
+	font-family: 'Open Sans', sans-serif;
+}
+.top-bar-section ul li.active > a {
+	background: #000;
+}
+#callout h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#callout p {
+	-webkit-margin-after: 0px;
+	-webkit-margin-before: 0px;
+}
+.item {
+	width:24.2%;
+	overflow:auto;
+	display:block;
+	margin-bottom:10px;
+	border-radius:3px;
+	border:solid 1px #999999;
+}
+
+.item-title {
+	padding:10px;
+	width:100%;
+	background-color:#F2F2F2;
+	height:35px;
+	font-weight: normal;
+	font-family: 'Open Sans', sans-serif;
+}
+.item-title a {
+	color:#FFF;
+	text-decoration:none;
+}
+.item-body {
+	padding:10px;
+	width:100%;
+	overflow:auto;
+	background-color:#FFF;
+}
+.title-area h1 a {
+	font-size:30px;
+}
+@media only screen and (max-width: 40em) {
+	.item {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	.item {
+		width:32.3%;
+	}
+}
+</style>
+</head>
+
+<body>
+<div class="contain-to-grid fixed" id="top-nav-container">
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Post-Mortem</a></h1>
+    </li>
+    <li class="has-form">
+  </ul>
+  <!--
+  <ul class="left">
+    <div class="row collapse">
+      <div class="large-8 small-9 columns">
+        <input type="text" placeholder="Find Stuff">
+      </div>
+      <div class="large-4 small-3 columns">
+        <a href="#" class="alert button expand">Search</a>
+      </div>
+    </div>
+    </li>
+  </ul>
+  -->
+  
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="active">
+      	<a href="#">Information</a>
+      </li>
+      <li>
+      	<a href="will.html">Digital Will Creator</a>
+      </li>
+    </ul>
+  </section>
+</nav>
+</div>
+<div id="body-wrapper" style="padding-top:50px; background-color:#F8F8F8">
+	<div class="row">
+    	<div class="large-12" style="padding:10px;">
+        	<div id="callout" style="margin-left: 5px; margin-right: 7px; padding: 10px; border:solid 1px #999; border-radius:3px; background-color: #FFF">
+                <h2>Information</h2>
+                <p>
+                Find information on how various sites treat your accounts and data after you have passed away
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+            <div id="block-container">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="foundation/js/jquery.js"></script>
+<!-- Masonry.js -->
+<script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+<!-- Foundation JS -->
+<script type="text/javascript" src="foundation/js/foundation.min.js"></script>
+
+<script type="text/javascript">
+
+// Just using this to test the layout with different amounts of text
+fakeBodyTextArray = ["In sollicitudin nibh diam. Vestibulum sit amet mi commodo, tempus leo ac, tincidunt arcu. Maecenas tristique iaculis suscipit. In hac habitasse platea dictumst. Nunc varius neque ut risus sollicitudin, sed tristique eros eleifend. Suspendisse potenti. Donec adipiscing gravida tellus, vel rutrum nibh commodo sit amet. Morbi ac sem pharetra mauris luctus ullamcorper a vel erat. Vivamus mollis, mi vestibulum volutpat hendrerit, turpis mi bibendum lacus, vel fringilla magna nulla quis tellus. Integer varius ligula sed velit fringilla, eget porta nulla ornare.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at tristique tellus, ut pellentesque risus. Sed nibh tellus, feugiat vel convallis et, sollicitudin in sem. Sed blandit sem ut lacus mollis, quis interdum sem porttitor. Integer imperdiet, arcu quis laoreet gravida, lectus orci fringilla dui, at dignissim orci ipsum nec elit. Morbi malesuada metus non aliquet vestibulum. Phasellus porta at libero quis adipiscing. Phasellus et ligula cursus, tristique velit eget, sodales turpis. Aliquam sem quam, adipiscing a scelerisque sed, placerat sed nisl. In ultricies cursus eleifend. Donec congue, ante sit amet blandit pellentesque, lectus orci aliquet felis, tempor mattis dolor ante vitae risus. Maecenas molestie orci a lorem suscipit, vitae porttitor odio aliquam. Proin erat mauris, feugiat ac dignissim eu, pretium at felis. Sed eleifend sapien imperdiet est convallis luctus. Cras tempor posuere vulputate. Duis consequat nunc ac elit volutpat, non aliquet dolor laoreet. Fusce non arcu vestibulum, rhoncus nulla eu, sodales nulla.", "Sed vitae tincidunt leo. Aliquam consequat lorem ut erat hendrerit accumsan. Curabitur luctus tellus ipsum, ac blandit nunc malesuada in. Curabitur et dolor a metus lobortis gravida. Nam ut arcu vitae tellus pellentesque interdum. Proin ut tristique metus. Nulla libero libero, pulvinar at magna quis, sodales dignissim metus. Quisque vel neque dui. Quisque tincidunt sodales enim. Aenean et tellus nibh. In hac habitasse platea dictumst. Mauris quis auctor tellus, eget ornare lectus.", "Ut enim sapien, consequat quis urna vel, congue imperdiet magna. Mauris leo lacus, placerat eget ullamcorper volutpat, luctus suscipit nibh. Integer in justo felis. Proin mauris nibh, feugiat in ligula sed, ultrices commodo felis. Quisque scelerisque arcu justo, nec auctor lacus sodales at. Etiam eget rhoncus odio. Aliquam tellus ipsum, facilisis a purus nec, mollis laoreet mauris."];
+
+fakeBackgroundColorArray = ["#cf393f","#5ecf61","#cfcc47"];
+
+// change this to iterate through the database of sites that we create in ruby.
+// Nathan, is this possible?
+for (var i = 0; i <= 10; i++){
+	var siteItem = document.createElement('div');
+	siteItem.innerHTML = '<div class="item-title" style="background-color:' + fakeBackgroundColorArray[Math.floor(Math.random() * fakeBackgroundColorArray.length)] + '"><a href="#">This is a test</a></div><div class="item-body">' + fakeBodyTextArray[Math.floor(Math.random() * fakeBodyTextArray.length)] +'</div>';
+	siteItem.className = "item";
+	document.getElementById("block-container").appendChild(siteItem);
+}
+
+
+// ------------- Initialize Masonry.js ----------------
+var $container = $('#block-container');
+// initialize
+console.log("hi");
+$container.masonry({
+	itemSelector: '.item',
+	columnWidth: ".item",
+	gutter: 10
+});
+</script>
+</body>
+</html>
