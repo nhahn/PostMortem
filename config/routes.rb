@@ -1,11 +1,15 @@
 PostMortem::Application.routes.draw do
-  resources :accounts
+  resources :accounts do 
+    get 'select_account', on: :collection
+  end
   resources :account_types do
     get 'info', on: :collection
   end
   resources :beneficiaries
   resources :users
-  resources :account_beneficiaries
+  resources :account_beneficiaries do
+    get 'check_option', on: :collection
+  end
   resources :sessions
 
 

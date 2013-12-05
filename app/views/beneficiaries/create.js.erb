@@ -1,0 +1,6 @@
+var elem = $('<li/>', {
+ id: 'beneficiary-<%=@beneficiary.id%>' 
+});
+$('#added-beneficiaries').append(elem);
+elem.html('<%= link_to @beneficiary.proper_name, edit_beneficiary_path(@beneficiary), {class: "row button secondary", style: "width:100%", remote: true}%>');
+$('#beneficiary-form').html('<h4>Add a Beneficiary</h4>');

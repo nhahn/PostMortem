@@ -1,0 +1,4 @@
+var elem = $('#account-<%=@account.id%>');
+elem.next().remove();
+elem.remove();
+$('#account-form').html('<h4>Click an Account Type to the left to Add an Account</h4>');

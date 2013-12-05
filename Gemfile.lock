@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ryanb/nested_form.git
-  revision: 30cfe186b54e9a7a786870417ae14e494ae205d7
+  revision: 1b0689dfb4d230ceabd278eba159fcb02f23c68a
   specs:
     nested_form (0.3.2)
 
@@ -63,7 +63,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.25)
+    mime-types (1.25.1)
     multi_json (1.8.2)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -112,7 +112,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.3.1)
+    uglifier (2.3.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     validates_timeliness (3.0.14)

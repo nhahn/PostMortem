@@ -4,8 +4,13 @@ class Account < ActiveRecord::Base
   belongs_to :account_type
   belongs_to :user
 
-  has_many :account_beneficiaries
+  has_many :account_beneficiaries, dependent: :destroy
   has_many :beneficiaries, through: :account_beneficiaries
 
+  validates_presence_of :username, :user, :account_type, :password
+
+  def proper_name
+    "#{self.account_type.name}: #{self.username}"
+  end
 
 end

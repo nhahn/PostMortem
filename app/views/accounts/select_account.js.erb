@@ -1,0 +1,2 @@
+$('#account-form').html("<%= escape_javascript(render 'form', formats: [:html]) %>");
+$('#account-form h4').text('<%=@account_type.name%>');

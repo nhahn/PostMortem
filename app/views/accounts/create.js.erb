@@ -1,0 +1,6 @@
+var elem = $('<li/>', {
+ id: 'account-<%=@account.id%>' 
+});
+$('#added-accounts').append(elem);
+elem.html('<%= link_to @account.proper_name, edit_account_path(@account), {class: "row button secondary", style: "width:100%", remote: true}%>');
+$('#account-form').html('<h4>Click an Account Type to the left to Add an Account</h4>');

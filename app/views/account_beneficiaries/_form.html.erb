@@ -1,13 +1,41 @@
-<%= simple_form_for(@account_beneficiary) do |f| %>
+<%= simple_form_for(@account_beneficiary, remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :account_id %>
-    <%= f.input :beneficiary_id %>
-    <%= f.input :permission %>
-  </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <%= f.association :account, label_method: :proper_name, value_method: :id %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.association :beneficiary, label_method: :proper_name, value_method: :id%>
+      </div>
+      <div class="large-4 columns">
+        <%= f.input :permission, collection: []%>
+      </div>
+    </div>
+ </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
+  <script>
+    $("#account_beneficiary_account_id").change( function() {
+        var str = "";
+        $( "#account_beneficiary_account_id option:selected" ).each(function() {
+          str += $( this ).val();
+        });
+        str = "<%= check_option_account_beneficiaries_path %>?id="+str;
+        $.ajax({
+          url: str,
+          dataType: 'json',
+          success: function(data) {
+            $('#account_beneficiary_permission').empty();
+            $.each(data, function(index, val) {
+              $('<option>').text(val).appendTo('#account_beneficiary_permission');
+            });
+          }
+        });
+    });
+  </script>
 <% end %>

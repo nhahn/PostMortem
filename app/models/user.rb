@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :accounts
-  has_many :beneficiaries, through: :accounts
+  has_many :beneficiaries
+  has_many :account_beneficiaries, through: :accounts  
 
   validates_presence_of :password, on: :create
   validates_presence_of :password_confirmation, on: :create

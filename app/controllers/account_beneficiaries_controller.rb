@@ -25,6 +25,7 @@ class AccountBeneficiariesController < ApplicationController
   # GET /account_beneficiaries/new.json
   def new
     @account_beneficiary = AccountBeneficiary.new
+    @account_beneficiaries = current_user.account_beneficiaries
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,17 @@ class AccountBeneficiariesController < ApplicationController
   # GET /account_beneficiaries/1/edit
   def edit
     @account_beneficiary = AccountBeneficiary.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def check_option
+    @account = Account.find(params[:id])
+
+    render json: @account.account_type.permissions.to_json
   end
 
   # POST /account_beneficiaries
@@ -46,9 +58,11 @@ class AccountBeneficiariesController < ApplicationController
       if @account_beneficiary.save
         format.html { redirect_to @account_beneficiary, notice: 'Account beneficiary was successfully created.' }
         format.json { render json: @account_beneficiary, status: :created, location: @account_beneficiary }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @account_beneficiary.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -62,9 +76,11 @@ class AccountBeneficiariesController < ApplicationController
       if @account_beneficiary.update_attributes(params[:account_beneficiary])
         format.html { redirect_to @account_beneficiary, notice: 'Account beneficiary was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @account_beneficiary.errors, status: :unprocessable_entity }
+        format.js { render 'create' }
       end
     end
   end
@@ -78,6 +94,7 @@ class AccountBeneficiariesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to account_beneficiaries_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

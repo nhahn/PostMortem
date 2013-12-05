@@ -1,5 +1,13 @@
-<h1>New account_beneficiary</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', account_beneficiaries_path %>
+<h3>Associate Beneficiaries</h3>
+<div class="row">
+  <dl id="account-beneficiaries">
+    <% @account_beneficiaries.each do |account_beneficiary| %>
+      <dd>
+        <%= render partial: 'list_item', locals: {account_beneficiary: account_beneficiary} %>
+      </dd>
+    <% end %>
+  </dl>
+</div>
+<div class="row">
+  <%= render 'form' %>
+</div>

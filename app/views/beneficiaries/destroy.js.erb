@@ -1,0 +1,4 @@
+var elem = $('#beneficiary-<%=@beneficiary.id%>');
+elem.next().remove();
+elem.remove();
+$('#beneficiary-form').html('<h4>Add a Beneficiary</h4>');

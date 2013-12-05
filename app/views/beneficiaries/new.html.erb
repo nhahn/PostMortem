@@ -1,5 +1,27 @@
-<h1>New beneficiary</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', beneficiaries_path %>
+<div class="row">
+  <div class="large-4 columns" style="padding-bottom: 15px">
+    <div class="form-inputs">
+      <label class="string">Added Accounts</label>
+      <ul class="side-nav" id="added-beneficiaries">
+      <% @beneficiaries.each do |beneficiary| %>
+        <li id="beneficiary-<%=beneficiary.id%>">
+          <%= link_to edit_beneficiary_path(beneficiary), {class: "row button secondary", style: "width:100%", remote: true} do %>
+            <%= beneficiary.proper_name %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+      <% end %>
+      </ul>
+    </div>
+    <%= link_to "Add a Beneficiary", new_beneficiary_path, {class: "row button", style: "width: 100%; color: white", remote: true} %>
+  </div>
+  <div class="large-8 columns" id="beneficiary-form">
+    <h4>Add a Beneficiary</h4>
+  </div>
+</div>
+<div class="row" style="padding-top: 30px;">
+  <div class="large-1 columns">&nbsp;</div>
+  <div class="large-3 large-offset-8 columns">
+    <%= link_to "Assign Accounts", new_account_beneficiary_path, class: "button", style: 'margin-left: -15px; color: white;'%>
+  </div> 
+</div>

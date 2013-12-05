@@ -25,30 +25,41 @@ class BeneficiariesController < ApplicationController
   # GET /beneficiaries/new.json
   def new
     @beneficiary = Beneficiary.new
-
+    @beneficiaries = current_user.beneficiaries
+  
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @beneficiary }
+      format.js 
     end
   end
 
   # GET /beneficiaries/1/edit
   def edit
     @beneficiary = Beneficiary.find(params[:id])
+    @beneficiaries = current_user.beneficiaries
+
+    respond_to do |format|
+      format.html
+      format.js { render 'new' } 
+    end
   end
 
   # POST /beneficiaries
   # POST /beneficiaries.json
   def create
     @beneficiary = Beneficiary.new(params[:beneficiary])
+    @beneficiary.user_id = current_user.id 
 
     respond_to do |format|
       if @beneficiary.save
         format.html { redirect_to @beneficiary, notice: 'Beneficiary was successfully created.' }
         format.json { render json: @beneficiary, status: :created, location: @beneficiary }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @beneficiary.errors, status: :unprocessable_entity }
+        format.js { render 'new' }
       end
     end
   end
@@ -62,9 +73,11 @@ class BeneficiariesController < ApplicationController
       if @beneficiary.update_attributes(params[:beneficiary])
         format.html { redirect_to @beneficiary, notice: 'Beneficiary was successfully updated.' }
         format.json { head :no_content }
+        format.js 
       else
         format.html { render action: "edit" }
         format.json { render json: @beneficiary.errors, status: :unprocessable_entity }
+        format.js { render 'new' }
       end
     end
   end
@@ -78,6 +91,7 @@ class BeneficiariesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to beneficiaries_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

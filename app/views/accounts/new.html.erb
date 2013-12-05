@@ -1,5 +1,41 @@
-<h1>New account</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', accounts_path %>
+<div class="row">
+  <div class="large-3 columns">
+    <div class="form-inputs">
+      <label class="string">Pick an Account</label>
+      <ul class="side-nav">
+      <% @account_types.each do |account_type| %>
+        <li>
+          <%= link_to select_account_accounts_path(account_type: account_type.id), {class: "row button secondary", style: "width:100%", remote: true} do %>
+            <%= account_type.name %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="large-6 columns" id="account-form">
+    <h4>Click an Account Type to the left to Add an Account</h4>
+  </div>
+  <div class="large-3 columns">
+    <div class="form-inputs">
+      <label class="string">Added Accounts</label>
+      <ul class="side-nav" id="added-accounts">
+      <% @accounts.each do |account| %>
+        <li id="account-<%=account.id%>">
+          <%= link_to edit_account_path(account), {class: "row button secondary", style: "width:100%", remote: true} do %>
+            <%= account.proper_name %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row" style="padding-top: 30px;">
+  <div class="large-1 columns">&nbsp;</div>
+  <div class="large-3 large-offset-8 columns">
+    <%= link_to "Define Beneficiaries", new_beneficiary_path, class: "button", style: 'margin-left: -15px; color: white;'%>
+  </div> 
+</div>
