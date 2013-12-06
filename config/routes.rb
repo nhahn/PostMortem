@@ -9,6 +9,7 @@ PostMortem::Application.routes.draw do
   resources :users
   resources :account_beneficiaries do
     get 'check_option', on: :collection
+    get 'generate_will', on: :collection
   end
   resources :sessions
 

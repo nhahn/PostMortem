@@ -1,0 +1,19 @@
+<h4> This is a pretend will </h4>
+
+<ul>
+  <% @account_beneficiaries.each do |ab| %>
+    <li>
+      <div class="row">
+        <div class="medium-4 columns">
+          Account: <%= ab.account.proper_name %>
+        </div>
+        <div class="medium-4 columns">
+          Beneficiary: <%= ab.beneficiary.proper_name %>
+        </div>
+        <div class="medium-4 columns">
+          Action: <%= ab.permission %>
+        </div>
+      </div>
+    </li>  
+  <% end %>
+</ul>

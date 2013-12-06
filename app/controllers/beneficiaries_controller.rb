@@ -24,6 +24,11 @@ class BeneficiariesController < ApplicationController
   # GET /beneficiaries/new
   # GET /beneficiaries/new.json
   def new
+    if (current_user.nil?)
+      redirect_to login_url
+      return
+    end 
+
     @beneficiary = Beneficiary.new
     @beneficiaries = current_user.beneficiaries
   

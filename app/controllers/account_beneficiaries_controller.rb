@@ -24,6 +24,11 @@ class AccountBeneficiariesController < ApplicationController
   # GET /account_beneficiaries/new
   # GET /account_beneficiaries/new.json
   def new
+    if (current_user.nil?)
+      redirect_to login_url
+      return
+    end 
+
     @account_beneficiary = AccountBeneficiary.new
     @account_beneficiaries = current_user.account_beneficiaries
 
@@ -47,6 +52,22 @@ class AccountBeneficiariesController < ApplicationController
     @account = Account.find(params[:id])
 
     render json: @account.account_type.permissions.to_json
+  end
+
+  def generate_will
+    if (current_user.nil?)
+      redirect_to login_url
+      return
+    end 
+
+    @account_beneficiaries = current_user.account_beneficiaries
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'will'
+      end
+    end
   end
 
   # POST /account_beneficiaries

@@ -1,0 +1,6 @@
+<ul class="breadcrumbs">
+  <li><%= link_to "Define Accounts", new_account_path%></li>
+  <li class="<%=((current_user.accounts.empty?)? "unavailable" : "") + (current_page?(new_beneficiary_path)? "current" : "")%>"><%= link_to "Define Beneficiaries", new_beneficiary_path%></li>
+  <li class="<%=((current_user.beneficiaries.empty?)? "unavailable" : "") + (current_page?(new_account_beneficiary_path)? "current" : "")%>"><%= link_to "Define Actions", new_account_beneficiary_path%></li>
+  <li class="<%=((current_user.account_beneficiaries.empty?)? "unavailable" : "") + (current_page?(generate_will_account_beneficiaries_path)? "current" : "")%>"><%= link_to "Generate Will", generate_will_account_beneficiaries_path%></li>
+</ul>

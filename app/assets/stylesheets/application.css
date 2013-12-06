@@ -70,13 +70,9 @@
 	font-size:30px;
 }
 @media only screen and (max-width: 40em) {
-	.item {
+	
+  .item {
 		width: 100%;
-	}
-}
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-	.item {
-		width:32.3%;
 	}
 }
 

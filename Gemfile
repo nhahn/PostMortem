@@ -10,7 +10,6 @@ gem 'simple_form'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 gem 'validates_timeliness'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,7 +26,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
-
+gem 'wkhtmltopdf-binary'
+gem 'wisepdf'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

@@ -24,6 +24,11 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
+    if (current_user.nil?)
+      redirect_to login_url
+      return
+    end
+
     @accounts = current_user.accounts
     @account_types = AccountType.all
 

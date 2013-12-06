@@ -1,0 +1,9 @@
+
+if ($('#account_beneficiary_update_<%=@account_beneficiary.id%>').length > 0) {
+  $('#account_beneficiary_update_<%=@account_beneficiary.id%>').remove();
+}
+else {
+  var elem = $('<div/>', {class: 'row', id: 'account_beneficiary_update_<%=@account_beneficiary.id%>'});
+  $('#ab-<%=@account_beneficiary.id%>').append(elem);
+  elem.html("<%= escape_javascript(render 'form', formats: [:html]) %>");
+}

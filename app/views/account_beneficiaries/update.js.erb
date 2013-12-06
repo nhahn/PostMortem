@@ -1,0 +1,4 @@
+$('#ab-<%=@account_beneficiary.id%>').remove();
+var elem = $('<dd/>');
+$('#account-beneficiaries').append(elem);
+elem.html("<%= escape_javascript(render partial: 'list_item', formats: [:html], locals: {account_beneficiary: @account_beneficiary}) %>");

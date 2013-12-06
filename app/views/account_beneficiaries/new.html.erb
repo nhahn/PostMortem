@@ -1,8 +1,9 @@
+<%= render partial: 'shared/breadcrumbs' %>
 <h3>Associate Beneficiaries</h3>
 <div class="row">
   <dl id="account-beneficiaries">
     <% @account_beneficiaries.each do |account_beneficiary| %>
-      <dd>
+      <dd id="ab-<%=account_beneficiary.id%>">
         <%= render partial: 'list_item', locals: {account_beneficiary: account_beneficiary} %>
       </dd>
     <% end %>
@@ -10,4 +11,11 @@
 </div>
 <div class="row">
   <%= render 'form' %>
+</div>
+<div class="row" style="padding-top: 30px;">
+  <div class="large-1 columns">&nbsp;</div>
+    <div class="large-3 large-offset-8 columns">
+        <%= link_to "Generate Will", generate_will_account_beneficiaries_path, class: "button", style: 'margin-left: -15px; color: white;'%>
+    </div> 
+  </div>
 </div>
