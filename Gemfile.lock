@@ -34,7 +34,6 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    addressable (2.3.5)
     arel (3.0.3)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -48,21 +47,12 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    excon (0.25.3)
     execjs (2.0.2)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     foundation-rails (5.0.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
-    heroku (3.0.1)
-      heroku-api (~> 0.3.7)
-      launchy (>= 0.3.2)
-      netrc (~> 0.7.7)
-      rest-client (~> 1.6.1)
-      rubyzip
-    heroku-api (0.3.15)
-      excon (~> 0.25.1)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -72,14 +62,11 @@ GEM
     jquery-ui-rails (4.1.0)
       railties (>= 3.1.0)
     json (1.8.1)
-    launchy (2.3.0)
-      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.8.2)
-    netrc (0.7.7)
     pg (0.17.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -112,9 +99,6 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
-    rubyzip (1.1.0)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -146,7 +130,6 @@ GEM
     validates_timeliness (3.0.14)
       timeliness (~> 0.3.6)
     wisepdf (1.3.1)
-    wkhtmltopdf-binary (0.9.9.1)
 
 PLATFORMS
   ruby
@@ -156,7 +139,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   font-awesome-rails
   foundation-rails
-  heroku
   jquery-rails
   jquery-ui-rails
   nested_form!
@@ -170,4 +152,3 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   validates_timeliness
   wisepdf
-  wkhtmltopdf-binary
