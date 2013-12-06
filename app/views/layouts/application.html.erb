@@ -44,6 +44,10 @@
             <%= link_to "Information", info_account_types_path %>
           </li>
           <li class="divider"></li>
+          <li>
+            <%= link_to "Account Types", account_types_path %>
+          </li>
+          <li class="divider"></li>
           <li class="<%= 'active' if current_page?(new_account_path) || current_page?(new_beneficiary_path) || current_page?(new_account_beneficiary_path) || current_page?(generate_will_account_beneficiaries_path) %>">
             <%= link_to "Digital Will Creator", new_account_path %>
           </li>

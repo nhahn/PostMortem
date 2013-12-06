@@ -50,6 +50,7 @@ class AccountTypesController < ApplicationController
   # POST /account_types.json
   def create
     @account_type = AccountType.new(params[:account_type])
+    @account_type.permissions = params[:account_type][:permissions].split(',')
 
     respond_to do |format|
       if @account_type.save
@@ -66,6 +67,7 @@ class AccountTypesController < ApplicationController
   # PUT /account_types/1.json
   def update
     @account_type = AccountType.find(params[:id])
+    @account_type.permissions = params[:account_type][:permissions].split(',')
 
     respond_to do |format|
       if @account_type.update_attributes(params[:account_type])

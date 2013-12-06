@@ -1,20 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @account_type.name %>
-</p>
-
-<p>
-  <b>Username regex:</b>
-  <%= @account_type.username_regex %>
-</p>
+<h3><%= @account_type.name %></h3>
 
 <p>
   <b>Permissions:</b>
   <%= @account_type.permissions %>
 </p>
 
+<p> 
+  <b>Content:</b>
+  <%= @account_type.content %>
+</p>
 
-<%= link_to 'Edit', edit_account_type_path(@account_type) %> |
-<%= link_to 'Back', account_types_path %>
+<%= link_to 'Edit', edit_account_type_path(@account_type), class: 'button' %>
+<%= link_to 'Back', account_types_path, class: 'button'%>
