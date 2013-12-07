@@ -3,5 +3,8 @@ class AccountType < ActiveRecord::Base
 
   serialize :permissions
   has_many :accounts
+  
+  validates_uniqueness_of :name
+ 
 
 end
