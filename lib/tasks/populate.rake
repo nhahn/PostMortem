@@ -58,13 +58,13 @@ namespace :db do
     type = AccountType.new
     type.name = "Friendster"
     type.permissions = ["Archive"]
-    type.content = "Archive account instructions: <br> Include: <ol><li>Log into account</li><li>Go to “Account Settings”</li><li>Click on “Deactivate”</li><li>Enter account password</li><li>Click on “Continue deactivating my account”</li></ol>"
+    type.content = "Archive account instructions: <br> Include: <ol><li>Log into account</li><li>Go to 'Account Settings'</li><li>Click on 'Deactivate'</li><li>Enter account password</li><li>Click on 'Continue deactivating my account'</li></ol>"
     type.save!
 
     type = AccountType.new
     type.name = "Apple"
     type.permissions = ["Delete"]
-    type.content = "Delete account instructions: <ol><li>Go to “Settings” on your device</li><li>Touch the iCloud button and scroll to the bottom of the screen</li><li>Click on “Delete Account."
+    type.content = "Delete account instructions: <ol><li>Go to 'Settings' on your device</li><li>Touch the iCloud button and scroll to the bottom of the screen</li><li>Click on 'Delete Account'."
     type.save!
 
     type = AccountType.new
@@ -106,7 +106,7 @@ namespace :db do
     type = AccountType.new
     type.name = "Ask.com"
     type.permissions = ["Delete"]
-    type.content = "Delete Account: <ol><li>Click “Settings”</li><li>Click “My Account”</li><li>Click “Delete My Account”</li></ol> "
+    type.content = "Delete Account: <ol><li>Click 'Settings'</li><li>Click 'My Account'</li><li>Click 'Delete My Account'</li></ol>"
     type.save!
     
     puts ".... done!"
