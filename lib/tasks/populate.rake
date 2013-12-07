@@ -20,6 +20,72 @@ namespace :db do
     type.save!
     
     type = AccountType.new
+    type.name = "Facebook"
+    type.permissions = ["Memorialize"]
+    type.content = "<a href='https://www.facebook.com/help/contact/305593649477238'>Memorialization info</a><p>Memorialization of account upon request and proof of death. This helps protect the deceased’s privacy</p>"
+    type.save!
+
+    type = AccountType.new
+    type.name = "Twitter"
+    type.permissions = ["Archive"]
+    type.content = "Must be a verified family member or authorized to act on behalf of the estate."
+    type.save!
+
+    type = AccountType.new
+    type.name = "Google"
+    type.permissions = ["Archive", "Transfer Ownership"]
+    type.content = "Specify what to do with your account through <a href=’https://support.google.com/accounts/answer/3036546?hl=en’>Inactive Account Manager</a>."
+    type.save!
+    
+    type = AccountType.new
+    type.name = "Instagram"
+    type.permissions = ["Delete"]
+    type.content = "Report a Deceased Person's Account: <a href=’https://www.facebook.com/help/instagram/contact/396019703850735’’’>form</a>"
+    type.save!    
+    
+    type = AccountType.new
+    type.name = "Yahoo"
+    type.permissions = ["None"]
+    type.content = "<ul><li>After death, individual loses all ownership rights.</li><li>By court order or subpoena only.</li>"
+    type.save!    
+
+    type = AccountType.new
+    type.name = "Flickr"
+    type.permissions = ["Archive"]
+    type.content = "Contact Yahoo! Legal Compliance team: 408-349-3687<br>Include:<ul><li>Death Certificate</li><li>URL</li><li>Screen Name</li></ul>"
+    type.save!
+    
+    type = AccountType.new
+    type.name = "America Online"
+    type.permissions = ["Transfer"]
+    type.content = "Transer to another AOL username already listed on the account. <br> Contact: <a href=’http://help.aol.com/help/microsites/microsite.do?cmd=displayKC&docType=kc&externalId=217480’>AOL Customer Service</a>"
+    type.save!
+    
+    type = AccountType.new
+    type.name = "Pinterest"
+    type.permissions = ["None"]
+    type.content = "Deactivate: <ul><li>Profile will be unavailable.</li><li>Unlink from Facebook and Twitter</li></ul>"
+    type.save!
+    
+    type = AccountType.new
+    type.name = "eBay"
+    type.permissions = ["None"]
+    type.content = "Deactivate your own account."
+    type.save!
+    
+    type = AccountType.new
+    type.name = "LinkedIn"
+    type.permissions = ["None"]
+    type.content = "Fill out <a href=’’>form</a>.<br>Include:<ul><li>Memeber’s Name</li><li>Company they worked at most recently</li><li>Your relation to the member</li><li>Link to the member profile</li><li>Member’s email address</li></ul>"
+    type.save!
+    
+    type = AccountType.new
+    type.name = "deviantArt"
+    type.permissions = ["Memorialize"]
+    type.content = "Deviant Cemetery:<br>Include:<ul><li>Username</li><li>Age</li><li>Date of death</li><li>Cause of death</li><li>Proof of death</li></ul>"
+    type.save!
+    
+    type = AccountType.new
     type.name = "MySpace"
     type.permissions = ["Delete", "Archive", "Remove Content"]
     type.content = "Requires email to accountcare@support.myspace.com. <br> Include: <ol><li>obituary or death certificate </li><li>How you are related to the deceased</li><li>deceased user's Myspace friend ID</li><li>Request to either delete or preserve the profile, or to remove content.</li></ol>"
