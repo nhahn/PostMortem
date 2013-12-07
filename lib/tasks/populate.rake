@@ -34,13 +34,13 @@ namespace :db do
     type = AccountType.new
     type.name = "Google"
     type.permissions = ["Archive", "Transfer Ownership"]
-    type.content = "Specify what to do with your account through <a href=’https://support.google.com/accounts/answer/3036546?hl=en’>Inactive Account Manager</a>."
+    type.content = "Specify what to do with your account through <a href='https://support.google.com/accounts/answer/3036546?hl=en'>Inactive Account Manager</a>."
     type.save!
     
     type = AccountType.new
     type.name = "Instagram"
     type.permissions = ["Delete"]
-    type.content = "Report a Deceased Person's Account: <a href=’https://www.facebook.com/help/instagram/contact/396019703850735’’’>form</a>"
+    type.content = "Report a Deceased Person's Account: <a href='https://www.facebook.com/help/instagram/contact/396019703850735'>form</a>"
     type.save!    
     
     type = AccountType.new
@@ -58,7 +58,7 @@ namespace :db do
     type = AccountType.new
     type.name = "America Online"
     type.permissions = ["Transfer"]
-    type.content = "Transer to another AOL username already listed on the account. <br> Contact: <a href=’http://help.aol.com/help/microsites/microsite.do?cmd=displayKC&docType=kc&externalId=217480’>AOL Customer Service</a>"
+    type.content = "Transer to another AOL username already listed on the account. <br> Contact: <a href='http://help.aol.com/help/microsites/microsite.do?cmd=displayKC&docType=kc&externalId=217480'>AOL Customer Service</a>"
     type.save!
     
     type = AccountType.new
@@ -76,7 +76,7 @@ namespace :db do
     type = AccountType.new
     type.name = "LinkedIn"
     type.permissions = ["None"]
-    type.content = "Fill out <a href=’’>form</a>.<br>Include:<ul><li>Memeber’s Name</li><li>Company they worked at most recently</li><li>Your relation to the member</li><li>Link to the member profile</li><li>Member’s email address</li></ul>"
+    type.content = "Fill out <a href='https://www.docusign.net/MEMBER/PowerFormSigning.aspx?PowerFormId=91e28b6c-bc93-47ed-8d1e-1f81083529d6'>form</a>.<br>Include:<ul><li>Memeber's Name</li><li>Company they worked at most recently</li><li>Your relation to the member</li><li>Link to the member profile</li><li>Member's email address</li></ul>"
     type.save!
     
     type = AccountType.new
