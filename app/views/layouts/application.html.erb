@@ -17,57 +17,58 @@
   <body>
 
     <div class="contain-to-grid fixed" id="top-nav-container">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><%=link_to "Post-Mortem", root_path %></h1>
-        </li>
-        <li class="has-form">
-      </ul>
-      <!--
-      <ul class="left">
-        <div class="row collapse">
-          <div class="large-8 small-9 columns">
-            <input type="text" placeholder="Find Stuff">
-          </div>
-          <div class="large-4 small-3 columns">
-            <a href="#" class="alert button expand">Search</a>
-          </div>
-        </div>
-        </li>
-      </ul>
-      -->
-      
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="divider"></li>
-          <li class="<%= 'active' if current_page?(info_account_types_path) || current_page?(root_path) %>">
-            <%= link_to "Information", info_account_types_path %>
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><%=link_to "Post-Mortem", root_path %></h1>
           </li>
-          <li class="divider"></li>
-          <li>
-            <%= link_to "Account Types", account_types_path %>
-          </li>
-          <li class="divider"></li>
-          <li class="<%= 'active' if current_page?(new_account_path) || current_page?(new_beneficiary_path) || current_page?(new_account_beneficiary_path) || current_page?(generate_will_account_beneficiaries_path) %>">
-            <%= link_to "Digital Will Creator", new_account_path %>
-          </li>
-          <li class="divider"></li>
-          <% if logged_in? %>
-            <li class="has-form">
-              <%= link_to current_user.proper_name, edit_user_path(current_user) %>
-            </li>
-            <li class="has-form">
-              <%= link_to "Logout", logout_path, class: "button"%>
-            </li>
-          <% else %>
-            <li class="has-form">
-              <%= link_to "Login", login_path, class: "button" %>
-            </li>
-          <% end %>
+          <li class="has-form">
         </ul>
-      </section>
-    </nav>
+        <!--
+        <ul class="left">
+          <div class="row collapse">
+            <div class="large-8 small-9 columns">
+              <input type="text" placeholder="Find Stuff">
+            </div>
+            <div class="large-4 small-3 columns">
+              <a href="#" class="alert button expand">Search</a>
+            </div>
+          </div>
+          </li>
+        </ul>
+        -->
+        
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li class="<%= 'active' if current_page?(info_account_types_path) || current_page?(root_path) %>">
+              <%= link_to "Information", info_account_types_path %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Account Types", account_types_path %>
+            </li>
+            <li class="divider"></li>
+            <li class="<%= 'active' if current_page?(new_account_path) || current_page?(new_beneficiary_path) || current_page?(new_account_beneficiary_path) || current_page?(generate_will_account_beneficiaries_path) %>">
+              <%= link_to "Digital Will Creator", new_account_path %>
+            </li>
+            <li class="divider"></li>
+            <% if logged_in? %>
+              <li class="has-form">
+                <%= link_to current_user.proper_name, edit_user_path(current_user) %>
+              </li>
+              <li class="has-form">
+                <%= link_to "Logout", logout_path, class: "button"%>
+              </li>
+            <% else %>
+              <li class="has-form">
+                <%= link_to "Login", login_path, class: "button" %>
+              </li>
+            <% end %>
+          </ul>
+        </section>
+      </nav>
+    </div>
     <div id="body-wrapper" style="padding-top:50px; background-color:#F8F8F8">
       <div class="row">
         <div class="large-12 columns">
