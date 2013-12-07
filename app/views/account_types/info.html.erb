@@ -17,7 +17,7 @@
           <%= link_to account.name, account %>
         </div>
         <div class="item-body">
-          <%= account.content %>
+          <%= account.content.html_safe %>
         </div>
       </div>
     <% end %>

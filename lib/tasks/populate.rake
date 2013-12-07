@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 namespace :db do
   desc "Erase and fill database"
   # creating a rake task within db namespace called 'populate'
@@ -11,18 +13,10 @@ namespace :db do
     puts "...done!"
 
     #Add an account type
-  
-    print "Step  1: Adding Account Types"
-    type = AccountType.new
-    type.name = "Google"
-    type.permissions = ["Delete", "Archive", "Transfer Ownership"]
-    type.content = "Here is some content"
-    type.save!
-    
     type = AccountType.new
     type.name = "Facebook"
     type.permissions = ["Memorialize"]
-    type.content = "<a href='https://www.facebook.com/help/contact/305593649477238'>Memorialization info</a><p>Memorialization of account upon request and proof of death. This helps protect the deceased’s privacy</p>"
+    type.content = "<a href='https://www.facebook.com/help/contact/305593649477238'>Memorialization info</a><p>Memorialization of account upon request and proof of death. This helps protect the deceased‚Äôs privacy</p>"
     type.save!
 
     type = AccountType.new
@@ -76,7 +70,7 @@ namespace :db do
     type = AccountType.new
     type.name = "LinkedIn"
     type.permissions = ["None"]
-    type.content = "Fill out <a href=''>form</a>.<br>Include:<ul><li>Memeber's Name</li><li>Company they worked at most recently</li><li>Your relation to the member</li><li>Link to the member profile</li><li>Member’s email address</li></ul>"
+    type.content = "Fill out <a href='https://www.docusign.net/MEMBER/PowerFormSigning.aspx?PowerFormId=91e28b6c-bc93-47ed-8d1e-1f81083529d6'>form</a>.<br>Include:<ul><li>Memeber's Name</li><li>Company they worked at most recently</li><li>Your relation to the member</li><li>Link to the member profile</li><li>Member's email address</li></ul>"
     type.save!
     
     type = AccountType.new
@@ -116,12 +110,6 @@ namespace :db do
     type.save!
 
     type = AccountType.new
-    type.name = "America Online"
-    type.permissions = ["Transfer Ownership"]
-    type.content = "Transfer to listed accounts only"
-    type.save!
-
-    type = AccountType.new
     type.name = "Friendster"
     type.permissions = ["Archive"]
     type.content = "Archive account instructions: <br> Include: <ol><li>Log into account</li><li>Go to 'Account Settings'</li><li>Click on 'Deactivate'</li><li>Enter account password</li><li>Click on 'Continue deactivating my account'</li></ol>"
@@ -136,7 +124,7 @@ namespace :db do
     type = AccountType.new
     type.name = "AT&T"
     type.permissions = ["Archive", "Alter"]
-    type.content = "Call Customer Service: 1800-331-0500 or 611 <br>Provide:<ol><li>Account holder’s Social Security</li><li>Account password</li></ol>"
+    type.content = "Call Customer Service: 1800-331-0500 or 611 <br>Provide:<ol><li>Account holder‚Äôs Social Security</li><li>Account password</li></ol>"
     type.save!
 
     type = AccountType.new
